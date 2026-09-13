@@ -1,0 +1,740 @@
+/* ==========================================================================
+   AFROBENSOFT EXECUTIVE BRAND STYLESHEET — PALETTE CORE: GREEN, GOLD, BLACK
+   ========================================================================== */
+
+/* Universal Reset and Fonts Setting Baseline */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-black: #0a0a0c;
+    --card-black: #121216;
+    --afro-green: #10b981;
+    --afro-green-hover: #059669;
+    --orange-gold: #f59e0b;
+    --orange-gold-hover: #d97706;
+    --pure-white: #ffffff;
+    --text-muted: #9ca3af;
+    --border-dark: #27272a;
+}
+
+body {
+    background-color: var(--primary-black);
+    color: var(--pure-white);
+    line-height: 1.6;
+}
+
+/* 1. Highly Responsive Top Navigation Bar Panel Layout */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background-color: rgba(10, 10, 12, 0.96);
+    border-bottom: 2px solid var(--afro-green);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.nav-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.brand-company {
+    color: var(--afro-green);
+}
+
+.brand-group {
+    color: var(--orange-gold);
+    font-size: 0.91rem;
+    margin-left: 0.1rem;
+    font-weight: normal;
+}
+
+/* Update your navigation link items to support smooth line transitions */
+.nav-links a {
+    color: var(--pure-white);
+    text-decoration: none;
+    margin-left: 1.4rem;
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    position: relative; /* Anchor point for our custom underline */
+    transition: all 0.3s ease;
+}
+
+/* 🟢 THE ACTIVE STATE STATE: Glowing Green Underline & Text Color Change */
+.nav-links a.active-nav {
+    color: var(--afro-green) !important;
+    font-weight: 600;
+}
+
+/* Creates a clean animated line below the text block frame */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--afro-green);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+/* Triggers the green line expansion instantly when active or on mouse hover */
+.nav-links a.active-nav::after,
+.nav-links a:hover::after {
+    width: 80%; /* Expands the line to perfectly anchor the word width layout */
+}
+
+/* 🟠 HOVER ALTERNATION: Highlight link background subtly on mouse pass */
+.nav-links a:hover {
+    color: var(--orange-gold);
+    background-color: rgba(245, 158, 11, 0.05);
+}
+
+/* Exclude the main download button from getting underlined or greyed out */
+.nav-links .nav-download-btn {
+     background-color: var(--afro-green-hover) !important;
+   
+}
+.nav-links .nav-download-btn::after {
+    display: none !important;
+}
+.nav-links .nav-download-btn:hover {
+   background-color: #d97706 !important;
+    color: var(--pure-white) !important;
+}
+
+
+/* 2. Hero Component Section Panel Framework */
+/* ==========================================================================
+   2. HERO SECTION — PREMIUM RESPONSIVE BACKGROUND GRAPHIC SPECIFICATION
+   ========================================================================== */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 5%;
+    
+    /* 🖼️ THE BACKGROUND PHOTO ENGINE (Using an elegant, unblurred corporate tech graphic link) */
+    background-image: linear-gradient(
+        180deg, 
+        rgba(10, 10, 12, 0.541) 0%,   /* Dark top tint blending seamlessly with your navbar */
+        rgba(10, 10, 12, 0.863) 50%,  /* Clear view zone window for background tech details */
+        rgba(10, 10, 12, 1.00) 100%  /* Heavy black baseline shading bleeding into your features grid */
+    ), 
+    url('pics/undraw_document-search_2o7x.svg');
+    
+    /* Strict layout control to ensure your image never distorts or runs slow */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Cool parallax effect: Background stays still as text scrolls! */
+}
+
+
+.hero-content {
+    max-width: 850px;
+}
+
+/* Software Logo Style Block directly above Heading Tag */
+.software-logo-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.software-logo-img {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(245, 158, 11, 0.3));
+}
+
+/* Updated Hero Content Typography Matrix */
+.hero h1 {
+    font-size: 3.2rem;
+    color: var(--orange-gold);
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.tagline {
+    font-size: 1.4rem;
+    color: var(--afro-green);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* New CSS rule for the SEO Heading Tag */
+.hero h2 {
+    font-size: 1.6rem;
+    color: var(--pure-white);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 3. Fully Dynamic Fluid Action Download Button Component Frame */
+.download-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+/* Locate your .main-download-btn block and ensure these base properties exist */
+.main-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--orange-gold) 0%, #b45309 100%);
+    color: var(--primary-black);
+    padding: 1.2rem 2.8rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    
+    /* CRITICAL PROPERTIES: Allows smooth expansion animation scaling */
+    max-width: 100%;
+    width: auto; 
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    white-space: normal; /* Prevents text from forcing one huge long broken line */
+    text-align: center;
+}
+
+/* NEW RESPONSIVE EXPANSION CLASS OPERATED VIA DOWNLOAD.JS BUTTON TRIGGERS */
+.main-download-btn.expanded-instruction {
+    font-size: 0.95rem; /* Slightly adjusts font scale so full instruction layout looks neat */
+    padding: 1.2rem 1.8rem;
+    border: 2px solid var(--orange-gold);
+    max-width: 750px; /* Expands wider to display your corporate notice text clearly */
+    width: 100%;
+    color: var(--pure-white);
+}
+
+/* Mobile Responsiveness Override: Ensures text drops gracefully on tight phone glass screens */
+@media (max-width: 768px) {
+    .main-download-btn.expanded-instruction {
+        font-size: 0.85rem;
+        padding: 1rem;
+        max-width: 100%;
+    }
+}
+
+
+.main-download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+    color: var(--pure-white);
+}
+
+.file-info {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+/* 4. Features Section Grid Container System */
+.features-section {
+    padding: 5rem 5%;
+    background-color: var(--card-black);
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--primary-black);
+    padding: 2.5rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-dark);
+    transition: border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--afro-green);
+}
+
+.card h3 {
+    color: var(--orange-gold);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* 5. Official Enterprise Licensing Section Panel Styles */
+.license-section {
+    padding: 5rem 5%;
+    text-align: center;
+    background-color: var(--primary-black);
+    border-top: 1px solid var(--border-dark);
+}
+
+.license-section h2 {
+    font-size: 2.2rem;
+    color: var(--pure-white);
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.license-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.license-box {
+    background-color: var(--card-black);
+    padding: 2rem;
+    border-radius: 6px;
+    text-align: left;
+    border-left: 4px solid var(--orange-gold);
+}
+
+.license-box h4 {
+    font-size: 1.2rem;
+    color: var(--pure-white);
+    margin-bottom: 0.8rem;
+}
+
+.license-box p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* 6. Executive CEO Profile Split Container Layout System (Photo + Bio) */
+.about-ceo {
+    padding: 6rem 5%;
+    background-color: var(--card-black);
+    border-top: 1px solid var(--border-dark);
+}
+
+.ceo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Photo Container Layout Frame */
+.ceo-photo-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.photo-frame {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, var(--afro-green) 0%, var(--orange-gold) 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.ceo-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--card-black);
+}
+
+/* Profile Text Content Layout Panel Frame */
+.ceo-text-side {
+    flex: 1.5;
+}
+
+.ceo-text-side h2 {
+    color: var(--afro-green);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+}
+
+.ceo-text-side h3 {
+    font-size: 2.3rem;
+    color: var(--pure-white);
+    margin-bottom: 0.2rem;
+}
+
+.ceo-text-side .title {
+    color: var(--orange-gold);
+    font-weight: 600;
+    font-size: 1.15rem;
+}
+
+.divider {
+    height: 4px;
+    width: 60px;
+    background-color: var(--afro-green);
+    margin: 1.2rem 0;
+}
+
+/* Keeps your paragraphs looking neat, spacious, and easy to read on mobile glass */
+.ceo-text-side .bio {
+    color: #d1d5db;
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem; /* Adds balanced breathing room between paragraphs */
+    text-align: justify;
+}
+
+
+.ceo-text-side .support {
+    font-size: 1.1rem;
+    color: var(--pure-white);
+    background-color: rgba(16, 185, 129, 0.1);
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    display: inline-block;
+    border-left: 4px solid var(--afro-green);
+}
+
+/* 7. Corporate Branded Bottom Footer Template */
+footer {
+    background-color: var(--primary-black);
+    text-align: center;
+    padding: 2.5rem 5%;
+    border-top: 1px solid var(--border-dark);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+footer p:first-child {
+    color: var(--afro-green);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   8. ADVANCED RESPONSIVE MEDIA QUERIES (FLUID LAYOUTS FOR ALL SMARTPHONES)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .ceo-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .ceo-text-side .bio {
+        text-align: center;
+    }
+
+    .divider {
+        margin: 1.2rem auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+        padding: 1rem 5%;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        margin: 0 0.5rem;
+        font-size: 0.95rem;
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .tagline {
+        font-size: 1.25rem;
+    }
+
+    .main-download-btn {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1.15rem;
+    }
+
+    .photo-frame {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .tagline { font-size: 1.15rem; }
+    .hero h2 { font-size: 1.25rem; }
+    .description { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+    
+    .logo-container {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .brand-group {
+        margin-left: 0;
+        display: block;
+        margin-top: 0.1rem;
+    }
+}
+
+
+/* ==========================================================================
+   9. INTERACTIVE DOWNLOAD MODAL STYLES (GREEN, GOLD, TRANSPARENT BLACK)
+   ========================================================================== */
+
+/* Dark Blurred Overlay Layout Mask */
+.modal-overlay {
+    display: none; /* Hidden by default until JavaScript wakes it up */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 12, 0.92);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+/* Centered High-Trust Modal Content Box Layout */
+.modal-content {
+    background-color: #121216;
+    border: 2px solid var(--afro-green);
+    width: 100%;
+    max-width: 500px;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(16, 185, 129, 0.2);
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+/* When active, slight scale pop animation effect */
+.modal-overlay.active {
+    display: flex;
+}
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.modal-logo {
+    height: 30px;
+    width: auto;
+}
+
+.modal-header h3 {
+    color: var(--orange-gold);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.modal-software-name {
+    color: var(--pure-white);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* Progress Track Channel Box */
+.progress-container {
+    width: 100%;
+    height: 14px;
+    background-color: #1f1f23;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-dark);
+}
+
+/* Glowing Fluid Green Loader Filler Sheet */
+.progress-bar {
+    width: 0%; /* Driven dynamically by download.js from 0% to 100% */
+    height: 100%;
+    background: linear-gradient(90deg, var(--afro-green) 0%, #34d399 100%);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+    border-radius: 10px;
+}
+
+/* Percentage and Message Text Alignment Row */
+.progress-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+#progressPercent {
+    color: var(--orange-gold);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.status-text {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+
+/* ==========================================================================
+   11. CORPORATE DOCUMENTATION CONTENT MANIFEST STYLES (GREEN, GOLD, BLACK)
+   ========================================================================== */
+.docs-section {
+    padding: 5rem 5%;
+    background-color: var(--card-black);
+    border-top: 1px solid var(--border-dark);
+}
+
+.docs-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.docs-section h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--pure-white);
+    margin-bottom: 0.5rem;
+}
+
+.docs-card-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.step-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background-color: var(--primary-black);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-dark);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.step-row:hover {
+    transform: translateX(5px);
+    border-color: var(--afro-green);
+}
+
+.step-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--orange-gold);
+    line-height: 1;
+}
+
+.step-text h4 {
+    font-size: 1.25rem;
+    color: var(--pure-white);
+    margin-bottom: 0.4rem;
+}
+
+.step-text p {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+}
+
+.docs-footer-note {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1rem;
+    color: var(--text-muted);
+    background-color: rgba(16, 185, 129, 0.05);
+    border-left: 4px solid var(--afro-green);
+    padding: 1rem;
+    border-radius: 0 6px 6px 0;
+}
+
+/* Media Query Responsive Override: Adjusts flex layout for compact smartphone monitors */
+@media (max-width: 600px) {
+    .step-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
