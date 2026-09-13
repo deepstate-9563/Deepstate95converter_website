@@ -14,8 +14,8 @@
 :root {
     --primary-black: #0a0a0c;
     --card-black: #121216;
-    --afro-green: #10b981;
-    --afro-green-hover: #059669;
+    --afro-green: rgb(5, 163, 5);
+    --afro-green-hover: rgb(5, 148, 5);
     --orange-gold: #f59e0b;
     --orange-gold-hover: #d97706;
     --pure-white: #ffffff;
